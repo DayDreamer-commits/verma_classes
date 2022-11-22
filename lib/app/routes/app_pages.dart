@@ -6,6 +6,10 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/notification/bindings/notification_binding.dart';
 import '../modules/notification/views/notification_view.dart';
+import '../modules/profile/bindings/profile_binding.dart';
+import '../modules/profile/views/profile_view.dart';
+import '../modules/results/bindings/results_binding.dart';
+import '../modules/results/views/results_view.dart';
 import '../modules/routine/bindings/routine_binding.dart';
 import '../modules/routine/views/routine_view.dart';
 import '../modules/scanner/bindings/scanner_binding.dart';
@@ -43,6 +47,16 @@ class AppPages {
       name: _Paths.SCANNER,
       page: () => const ScannerView(),
       binding: ScannerBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE,
+      page: () => const ProfileView(),
+      binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.RESULTS,
+      page: () => const ResultsView(),
+      binding: ResultsBinding(),
     ),
   ];
 }

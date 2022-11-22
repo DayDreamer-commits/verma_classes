@@ -8,6 +8,8 @@ abstract class Routes {
   static const ACADEMIC_CALENDER = _Paths.ACADEMIC_CALENDER;
   static const ROUTINE = _Paths.ROUTINE;
   static const SCANNER = _Paths.SCANNER;
+  static const PROFILE = _Paths.PROFILE;
+  static const RESULTS = _Paths.RESULTS;
 }
 
 abstract class _Paths {
@@ -17,4 +19,6 @@ abstract class _Paths {
   static const ACADEMIC_CALENDER = '/academic-calender';
   static const ROUTINE = '/routine';
   static const SCANNER = '/scanner';
+  static const PROFILE = '/profile';
+  static const RESULTS = '/results';
 }

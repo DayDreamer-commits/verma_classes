@@ -31,11 +31,11 @@ class HomeController extends GetxController {
   }
 
   void openAcademicCalender() {
-    Get.toNamed(Routes.ACADEMIC_CALENDER);
+    Get.toNamed(Routes.PROFILE);
   }
 
   void openRoutine() {
-    Get.toNamed(Routes.ROUTINE);
+    Get.toNamed(Routes.RESULTS);
   }
 
   void scanQr() {

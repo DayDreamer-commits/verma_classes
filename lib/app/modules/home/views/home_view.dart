@@ -38,33 +38,33 @@ class HomeView extends GetView<HomeController> {
           width: size.width * 0.75,
           child: ListView(
             children: [
-              Card(
+               Card(
                 margin: const EdgeInsets.all(0),
                 child: UserAccountsDrawerHeader(
-                  accountName: const Text("accountName"),
-                  accountEmail: const Text("accountEmail"),
+                  accountName: const Text("Name"),
+                  accountEmail: const Text("Roll Number"),
                   currentAccountPicture:
                       Image.asset("assets/images/vc_logo.png"),
                 ),
               ),
               Card(
                 child: ListTile(
-                  leading: const Icon(Icons.calendar_month),
-                  title: const Text("Academic Calender"),
+                  leading: const Icon(Icons.person,color: Colors.blue),
+                  title: const Text("Profile"),
                   onTap: controller.openAcademicCalender,
                 ),
               ),
               Card(
                 child: ListTile(
-                  leading: const Icon(Icons.access_time),
-                  title: const Text("Class Routine"),
+                  leading: const Icon(Icons.pending_actions,color: Colors.blue,),
+                  title: const Text("Results"),
                   onTap: controller.openRoutine,
                 ),
               ),
               Card(
                 child: ListTile(
-                  leading: const Icon(Icons.qr_code),
-                  title: const Text("Scan"),
+                  leading: const Icon(Icons.people,color: Colors.blue),
+                  title: const Text("Change Account"),
                   onTap: controller.scanQr,
                 ),
               ),
@@ -77,8 +77,8 @@ class HomeView extends GetView<HomeController> {
           children: const [
             HomeWidget(),
             LibraryWidget(),
-            AssignmentWidget(),
-            ProfileWidget(),
+            ScienceBulletinWidget(),
+            StoreWidget(),
           ],
         ),
         bottomNavigationBar: const VermaBottomNav(),
@@ -90,11 +90,11 @@ class HomeView extends GetView<HomeController> {
 List<IconData> listOfIcons = [
   Icons.home_rounded,
   Icons.local_library,
-  Icons.assignment,
-  Icons.person_rounded,
+  Icons.precision_manufacturing,
+  Icons.store,
 ];
 
-List<String> titles = ["Home", "Library", "Assignments", "Profile"];
+List<String> titles = ["Home", "Library", "Science Bulletin", "Bagpack"];
 
 class VermaBottomNav extends StatelessWidget {
   const VermaBottomNav({Key? key}) : super(key: key);
@@ -104,10 +104,11 @@ class VermaBottomNav extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     final controller = Get.find<HomeController>();
     return Container(
-      margin: const EdgeInsets.all(20),
+
+      margin: const EdgeInsets.all(16),
       height: size.width * .155,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.yellow.shade200,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(.15),
@@ -314,20 +315,70 @@ class LibraryWidget extends StatelessWidget {
   }
 }
 
-class AssignmentWidget extends StatelessWidget {
-  const AssignmentWidget({Key? key}) : super(key: key);
+class ScienceBulletinWidget extends StatelessWidget {
+  const ScienceBulletinWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ListView.builder(
+        itemBuilder: (context, index) => Card(
+          color: Colors.blue,
+          child: Container(
+            height: 150,
+          ),
+        ));
   }
 }
 
-class ProfileWidget extends StatelessWidget {
-  const ProfileWidget({Key? key}) : super(key: key);
+class StoreWidget extends StatelessWidget {
+  const StoreWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+
+
+    return  Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            "New Arrival",
+            style: Theme.of(context).textTheme.headline5,
+          ),
+        ),
+        SizedBox(
+            height: 200,
+            child: ListView.builder(
+              itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Container(
+                    width: 200,
+                    height: 200,
+                    color: Colors.red,
+                  ),
+                ),
+              ),
+              scrollDirection: Axis.horizontal,
+            )),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            "Categories",
+            style: Theme.of(context).textTheme.headline5,
+          ),
+        ),
+        Expanded(
+            child: ListView.builder(
+                itemBuilder: (context, index) => Card(
+                  color: Colors.blue,
+                  child: Container(
+                    height: 150,
+                  ),
+                )))
+      ],
+    );
   }
 }
