@@ -30,16 +30,18 @@ class HomeController extends GetxController {
     super.onClose();
   }
 
-  void openAcademicCalender() {
+  void openProfile() {
     Get.toNamed(Routes.PROFILE);
   }
 
-  void openRoutine() {
+  void openResults() {
     Get.toNamed(Routes.RESULTS);
   }
 
-  void scanQr() {
-    Get.toNamed(Routes.SCANNER);
+  void changeAccount() {
+
+    //todo reset all data
+    Get.toNamed(Routes.LOGIN);
   }
 
   void openNotification() {

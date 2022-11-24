@@ -51,21 +51,21 @@ class HomeView extends GetView<HomeController> {
                 child: ListTile(
                   leading: const Icon(Icons.person,color: Colors.blue),
                   title: const Text("Profile"),
-                  onTap: controller.openAcademicCalender,
+                  onTap: controller.openProfile,
                 ),
               ),
               Card(
                 child: ListTile(
                   leading: const Icon(Icons.pending_actions,color: Colors.blue,),
                   title: const Text("Results"),
-                  onTap: controller.openRoutine,
+                  onTap: controller.openResults,
                 ),
               ),
               Card(
                 child: ListTile(
                   leading: const Icon(Icons.people,color: Colors.blue),
                   title: const Text("Change Account"),
-                  onTap: controller.scanQr,
+                  onTap: controller.changeAccount,
                 ),
               ),
             ],

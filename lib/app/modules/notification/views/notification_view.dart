@@ -13,12 +13,9 @@ class NotificationView extends GetView<NotificationController> {
         title: const Text('NotificationView'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text(
-          'NotificationView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+      body: ListView.builder(itemBuilder: (context,index){
+        return ListTile();
+      }),
     );
   }
 }
